@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <script>
+  function updateCountdown() {
+    const countdownElements = {
+      days: document.getElementById('days'),
+      hours: document.getElementById('hours'),
+      minutes: document.getElementById('minutes'),
+      seconds: document.getElementById('seconds')
+    };
+
+    const targetDate = new Date('2024-10-05T09:30:00Z').getTime();
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        countdownElements.days.textContent = '00';
+        countdownElements.hours.textContent = '00';
+        countdownElements.minutes.textContent = '00';
+        countdownElements.seconds.textContent = '00'
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElements.days.textContent = days.toString().padStart(2, '0');
+      countdownElements.hours.textContent = hours.toString().padStart(2, '0');
+      countdownElements.minutes.textContent = minutes.toString().padStart(2, '0');
+      countdownElements.seconds.textContent = seconds.toString().padStart(2, '0');
+    }, 1000);
+  }
+
+  window.onload = updateCountdown;
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackology</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="hacko1.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+   <nav> 
+    <div class="container">
+        <ul>
+          <li><a href="#countdown">odliczanie</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#partners">Partnerzy</a></li>
+          <li><a href="#organizers">Organizers</a></li>
+          <li><a href="subpage1.html">Podstrona</a></li>
+          <li><a href="regulamin.txt" target="_blank">Regulamin</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header>
+        <h1 class="glitch">Hackology</h1><br>
+        <img src="hacko1.png" alt="logoOFhackology" width="600" height="600">
+    </header>
+    <br><br><br><br><br><br><br><br><br><br>
+
+        <h1 class="glitch">odliczanie: </h1><br>
+            <section id="countdown" class="countdown">
+               
+              <div>
+                <h2 class="glitch"id="days">00</h2>
+                <p>dni</p>
+              </div>
+              <div>
+                <h2 class="glitch" id="hours">00</h2>
+                <p>godziny</p>
+              </div>
+              <div>
+                <h2 class="glitch"id="minutes">00</h2>
+                <p>minuty</p>
+              </div>
+              <div>
+                <h2 class="glitch" id="seconds">00</h2>
+                <p>sekundy</p>
+              </div>
+            </section>
+          
+
+    
+      <br><br><br><br><br><br>
+      <section class="timeline-section" id="timeline">
+        <h1 class="glitch">timeline</h1>
+        <div class="timeline">
+            
+
+                    <div class="timeline-empty">
+                    </div>
+  
+
+  
+                 <div class="timeline-middle">
+                     <div class="timeline-circle"></div>
+                 </div>
+                 <div class="timeline-component timeline-content">
+                  <h3>wydarzenie 1</h3>
+                  <p>lore ipsum stanie się lore ipsum ipsum lore </p>
+             </div>
+                  <div class="timeline-component timeline-content">
+                           <h3>wydarzenie 2</h3>
+                           <p>Stanie się to i tamto i jeszcze</p>
+                  </div>
+                  <div class="timeline-middle">
+                      <div class="timeline-circle"></div>
+                  </div>
+                  <div class="timeline-empty">
+                  </div>
+  
+                  <div class="timeline-empty">
+                  </div>
+  
+                 <div class="timeline-middle">
+                     <div class="timeline-circle"></div>
+                 </div>
+                 <div class=" timeline-component timeline-content">
+                  <h3>wydarzenie 3</h3>
+                  <p>Some Text bla bal bla bla</p>
+             </div>
+             
+             <div class=" timeline-component timeline-content">
+                <h3>wydarzenie 4    </h3>
+                <p>Some Text bla bal bla bla</p>
+            </div>
+            <div class="timeline-middle">
+                <div class="timeline-circle"></div>
+            </div>
+            
+         </div>
+      </div> 
+         
+        
+      </section>
+      <br><br><br><br>
+      <h1 class="glitch">Partnerzy: </h1><br>
+      <section class="partners" id="partners">
+        
+        <div>Partner 1</div>
+        <div>Partner 2</div>
+        <div>Partner 3</div>
+      </section>
+      <br><br><br><br>
+      <h1 class="glitch">organizacja: </h1><br><
+      <section class="organizers" id="organizers">
+       
+        <div>Organizer 1</div>
+        <div>Organizer 2</div>
+        <div>Organizer 3</div>
+      </section>
+    
+    </div>
+    
+    <footer>
+      <p>Hackology | Social Media Links</p>
+    </footer>
+    
+</body>
+</html>
