@@ -27,8 +27,8 @@ body {
 
     :root a { color: #DA9AFF; text-decoration: none; }
 
+
 .Nav {
-    margin-bottom: 15vh;
     background-color: #070F34;
 }
 
@@ -44,6 +44,14 @@ body {
     min-height: 100vh;
      background-size: cover;
 }
+
+    .Front > .Nav {
+        margin-bottom: 15vh;
+    }
+
+    .Front > .Logo {
+        margin: 10vh auto;
+    }
 
 .Back {
     padding-top: 5em;
@@ -64,15 +72,28 @@ body {
             z-index: 1;
     }
 
+    .Back > .Terminal {
+    
+        padding: .5em 1.4em;
+            padding-bottom: 10em;
+        margin-left: auto;
+    }
+
+.Backstage > .Header > .Logo {
+    margin: 1em;
+}
+
 .Logo {
     display: block; 
     width: 32em; height: 32em;
-        margin: 10vh auto;
+    margin: 1em;
 }
+
+    .Logo.small {width: 8em; height: 8em;}
 
 .Header {
     
-    display: flex; 
+    display: flex;
         justify-content: center; 
         align-items: center;
     
@@ -81,6 +102,7 @@ body {
     max-width: 100%;
 }
 
+    .Header > .name,
     .Header > .container > .name {
      
         font: 5em Odibee, sans-serif;
@@ -118,14 +140,11 @@ body {
         width: 1em; height: 1em;
     }
 
-
-
 .Terminal {
 
+    min-height: 48em;
+    width: 100%;
     max-width: 80em;
-    padding: .5em 1.4em;
-        padding-bottom: 10em;
-    margin-left: auto;
 
     font-family: monospace;
     color: white; 
@@ -136,6 +155,11 @@ body {
     position: relative;
     z-index: 10;
 }
+
+    .Terminal > .heading {
+        font-size: 2em;
+        text-align: center;
+    }
 
     .Terminal > .Timer {
         margin-top: 4em;
@@ -289,3 +313,24 @@ body {
         .Participants > .container > .Icon {
             font-size: 10em;        
         }   
+
+
+
+
+.Register {
+    
+    min-height: 100vh;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+    .Register > .Terminal {
+        margin: 10em 0;
+        padding-left: 2em;
+    }
+
+.Gform {
+    width: 100%;
+    height: 64em;
+}
