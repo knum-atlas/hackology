@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html lang="pl">
+    <script>
+          var i = 0;
+            var txt = `Hackathon Hackology na Politechnice Lubelskiej to wyjątkowe wydarzenie,
+                        które integruje studentów z różnych dziedzin poprzez wspólne rozwiązywanie 
+                        problemów z użyciem technologii. To nie tylko okazja do wykorzystania wiedzy 
+                        technicznej, ale także do kreatywnego myślenia i pracy zespołowej. 
+                        Podczas hackathonu uczestnicy mają możliwość prezentowania swoich pomysłów 
+                        i prototypów przed jury złożonym z ekspertów branżowych. 
+                        To doskonała okazja do eksploracji nowatorskich rozwiązań technologicznych 
+                        i rozwijania umiejętności programistycznych oraz projektowych.`;
+            var speed = 25;
+            
+            function typeWriter() {
+              if (i < txt.length) {
+                document.getElementById("demo1").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+              }
+            }
+
+        function updateCountdown() {
+          const countdownElements = {
+            days: document.getElementById('days'),
+            hours: document.getElementById('hours'),
+            minutes: document.getElementById('minutes'),
+            seconds: document.getElementById('seconds')
+          };
+      
+          const targetDate = new Date('2024-10-05T09:30:00Z').getTime();
+      
+          const interval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+      
+            if (distance < 0) {
+              clearInterval(interval);
+              countdownElements.days.textContent = '00';
+              countdownElements.hours.textContent = '00';
+              countdownElements.minutes.textContent = '00';
+              countdownElements.seconds.textContent = '00'
+              return;
+            }
+      
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+            countdownElements.days.textContent = days.toString().padStart(2, '0');
+            countdownElements.hours.textContent = hours.toString().padStart(2, '0');
+            countdownElements.minutes.textContent = minutes.toString().padStart(2, '0');
+            countdownElements.seconds.textContent = seconds.toString().padStart(2, '0');
+          }, 1000);
+        }
+      
+        window.onload =function() {
+            updateCountdown();
+            typeWriter();
+        };
+      
+      </script>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hackology</title>
 
         <link rel="stylesheet" href="./style.css">
+        <link rel="icon" type="image/png" href="logo+shadow.png">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
+   
+         
     <body>
 
         <div class="Front">
@@ -68,73 +132,162 @@
         <main class="Back">
 
             <div class="cover"></div>
+           
+            <div class="leftcolumn">
+                <section class="timeline-section" id="timeline">
+                    <h1 class="glitch">timeline</h1>
+                    <div class="timeline">
+                        
+            
+                                <div class="timeline-empty">
+                                </div>
+              
+            
+              
+                             <div class="timeline-middle">
+                                 <div class="timeline-circle"></div>
+                             </div>
+                             <div class="timeline-component timeline-content">
+                              <h3 class="glitch" style="font-size: 1em;">wydarzenie 1</h3>
+                              <p>lore ipsum stanie się lore ipsum ipsum lore </p>
+                         </div>
+                              <div class="timeline-component timeline-content">
+                                       <h3 class="glitch" style="font-size: 1em;">wydarzenie 2</h3>
+                                       <p>Stanie się to i tamto i jeszcze</p>
+                              </div>
+                              <div class="timeline-middle">
+                                  <div class="timeline-circle"></div>
+                              </div>
+                              <div class="timeline-empty">
+                              </div>
+              
+                              <div class="timeline-empty">
+                              </div>
+              
+                             <div class="timeline-middle">
+                                 <div class="timeline-circle"></div>
+                             </div>
+                             <div class=" timeline-component timeline-content">
+                              <h3 class="glitch" style="font-size: 1em;">wydarzenie 3</h3>
+                              <p>Some Text bla bal bla bla</p>
+                         </div>
+                         
+                         <div class=" timeline-component timeline-content">
+                            <h3 class="glitch" style="font-size: 1em;">wydarzenie 4    </h3>
+                            <p>Some Text bla bal bla bla</p>
+                        </div>
+                        <div class="timeline-middle">
+                            <div class="timeline-circle"></div>
+                        </div>
+                        
+                     </div>
+                  </div> 
 
-            <article id="about" class="Terminal">
+                
+                         
 
-                <p class="Pseudocode">
-                    Koło Naukowe Uczenia Maszynowego ATLAS (pollub.pl, 15.05.2024, godzina) [POLITYKA STRONY]<br>
-                    Type "FAQ", "regulamin", "zespół" albo "rejestracja" po więcej informacji<br>
-                    <span class="input">&gt;&gt;&gt;</span> o_hackology()
-                </p>
+                
 
-                <p class="Pseudocode">
-                    Hackathon Hackology na Politechnice Lubelskiej to wyjątkowe wydarzenie, 
-                    które integruje studentów z różnych dziedzin poprzez wspólne rozwiązywanie 
-                    problemów z użyciem technologii. To nie tylko okazja do wykorzystania wiedzy 
-                    technicznej, ale także do kreatywnego myślenia i pracy zespołowej. 
-                    Podczas hackathonu uczestnicy mają możliwość prezentowania swoich pomysłów 
-                    i prototypów przed jury złożonym z ekspertów branżowych. 
-                    To doskonała okazja do eksploracji nowatorskich rozwiązań technologicznych 
-                    i rozwijania umiejętności programistycznych oraz projektowych.
-                    <br><span class="input">&gt;&gt;&gt;</span>
-                </p>
 
-                <p id="czas" class="Timer">
 
-                    <span class="label">Pozostało:</span>
 
-                    <span><span class="count"
+
+
+
+
+            </div>
+
+            <div class="rightcolumn">
+                <article id="about" class="Terminal">
+
+                    <p class="Pseudocode" id="demo">
+                        Koło Naukowe Uczenia Maszynowego ATLAS (pollub.pl, 15.05.2024, godzina) [POLITYKA STRONY]<br>
+                        Type "FAQ", "regulamin", "zespół" albo "rejestracja" po więcej informacji<br>
+                        <span class="input">&gt;&gt;&gt;</span> o_hackology()
+                    </p>
+                    
+                    <p class="Pseudocode" id="demo1">
+                        
+                        <br><span class="input">&gt;&gt;&gt;</span>
+                    </p>
+
+                    <section id="czas" class="Timer">
+                        
+                    <div class="timeDiv">
+                        <span class="label">Pozostało:</span>
+                        <span class="count"id="hours"
                         >23</span><span class="separator"
-                        >:</span><span class="count"
+                        >:</span><span class="count"id="minutes"
                         >59</span><span class="separator"
-                        >:</span><span class="wrapper"><span class="count"
+                        >:</span><span class="wrapper"><span class="count"id="seconds"
                             >59</span>
                             <span class="label">godzin</span>
                         </span>
-                        </span><span class="separator">+</span><span class="wrapper"><span class="count"
+                        </span><span class="separator">+</span><span class="wrapper"><span class="count"id="days"
                         >365</span>
                         <span class="label">dni</span>
                     </span>
 
-                </p>
 
-                <div class="Widgets">
+                    
 
-                    <div class="column left">
+                    </section><br><br><br><br>
 
-                        <p class="Location">
-                            <span class="date">15 maja 2025</span><br>
-                            <span class="place">ul. Nadbystrzycka 36C</span><br>
-                            <span class="postal">20-618 Lublin</span>
-                        </p>
+                    <div class="Widgets">
 
-                        <img class="Map">
-                        <a class="button" href="">Zobacz trasę</a>
+                        <div class="column left">
+
+                            <p class="Location">
+                                <span class="date">15 maja 2025</span><br>
+                                <span class="place">ul. Nadbystrzycka 36C</span><br>
+                                <span class="postal">20-618 Lublin</span>
+                            </p>
+
+                            <div class="Map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1766.4259463697438!2d22.54879504688506!3d51.235588157847694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4722577729316bd9%3A0x442236391b743bc!2sPolitechnika%20Lubelska%2C%2020-618%20Lublin!5e0!3m2!1spl!2spl!4v1715907355217!5m2!1spl!2spl" class="Gmap"  referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            <a class="button" href="">Zobacz trasę</a>
+                        </div>
+
+                        <div class="column right">
+                            <img class="calendar" src="">
+                            <a href="">Dodaj do kalendarza</a>
+                        </div>
+
                     </div>
 
-                    <div class="column right">
-                        <img class="calendar" src="">
-                        <a href="">Dodaj do kalendarza</a>
-                    </div>
+                    <div class="shadow"></div>
 
-                </div>
-
-                <div class="shadow"></div>
-
-            </article>
-
+                </article>
+            </div>
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <br><br><br><br>
+            <h1 class="glitch">Partnerzy: </h1><br>
+            <section class="partners" id="partners">
+              
+              <div>Partner 1</div>
+              <div>Partner 2</div>
+              <div>Partner 3</div>
+            </section>
+            <section class="partners" id="partners">
+              
+                <div>Partner 4</div>
+                <div>Partner 5</div>
+                <div>Partner 6</div>
+              </section>
         </main>
-
+        
         <footer class="Footer">
 
             <section class="section">
