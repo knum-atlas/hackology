@@ -151,6 +151,7 @@ body {
     min-height: 48em;
     width: 100%;
     max-width: 80em;
+    padding: 5em 0;
 
     font-family: monospace;
     color: white; 
@@ -165,6 +166,17 @@ body {
     .Terminal > .heading {
         font-size: 2em;
         text-align: center;
+    }
+
+    .Terminal > .headline {
+
+        color: #DA9AFF;
+        letter-spacing: .2em;
+        font-family: Odibee;
+        font-size: 2em;
+        display: flex;
+            align-items: center;
+            gap: 1em;
     }
 
     .Terminal > .Timer {
@@ -314,7 +326,7 @@ body {
     margin: 10px 10px 0px 10px ;
     margin-bottom: 20px;
     border-radius: 6px;
-    z-index: 4  ;
+    z-index: 4;
   }
   
   .timeline-component {
@@ -499,3 +511,68 @@ body {
 .glitch.Low{
     font-size: 0.5em;
         }
+
+
+.Greek {
+    width: 8em;
+    height: 8em;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.Patron {
+    display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+}
+
+    .Patron > .info {
+        text-align: center;
+        margin: 1em;
+        white-space: nowrap;
+    }
+
+        .Patron > .info > * > .price {
+            font: 3em E1234;
+        }
+
+        .Patron > .info > * >  .currency {
+            font: 2em E1234;
+        }
+
+    .Patron > .perks { width: 100%; }
+
+    .Patron > .perks.shorter {
+        max-width: calc(100% - 52em);
+    }
+
+    .Patron > .perks.short {
+        max-width: calc(100% - 32em);
+    }
+
+
+.Perk {}
+    
+    .Perk > .name {
+
+        font: 1.5em monospace;
+        text-align: center;
+        background-color: #070F34;
+        padding: .5em 1.5em;
+        border-radius: 1em;
+    }
+
+.Terminal > .address {
+
+    margin-top: 12em;
+    text-align: center;
+}
+
+.Terminal > .address .Greek {
+    width: 4em;
+    height: 4em;
+}
