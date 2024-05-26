@@ -26,6 +26,7 @@ body {
 }
 
     :root a { color: #DA9AFF; text-decoration: none; }
+    :root a.disabled { color: #DA9AFF; pointer-events: none; }
 
 
 .Nav {
@@ -40,7 +41,8 @@ body {
 
 .Front {
 
-    background-image: url('./background.png');;
+    padding: 0 0 5em 0;
+    background-image: url('./background.png');
     min-height: 100vh;
      background-size: cover;
 }
@@ -50,12 +52,12 @@ body {
     }
 
     .Front > .Logo {
-        margin: 10vh auto;
+        margin: 5em auto;
     }
 
 .Back {
     padding-top: 5em;
-    padding-bottom: 20em;
+    padding-bottom: max(50vh, 20em);
     background: no-repeat 0 0 url('./background.png');
     background-attachment: fixed;
     position: relative;
@@ -72,21 +74,13 @@ body {
             z-index: 1;
     }
 
-    .Back > .Terminal,
-    .Back > * > .Terminal {
-    
-        padding: .5em 1.4em;
-            padding-bottom: 10em;
-        margin-left: auto;
+    .Back > .Organisation {
+        margin-top: max(30vh, 10em);
     }
 
 .leftcolumn {
     float: left;
     width: 25%;
-}
-
-.Backstage > .Header > .Logo {
-    margin: 1em;
 }
 
 .Logo {
@@ -146,12 +140,13 @@ body {
         width: 1em; height: 1em;
     }
 
-.Terminal {
+.Contentbox {
 
     min-height: 48em;
     width: 100%;
     max-width: 80em;
-    padding: 5em 0;
+    padding: 5em 2em;
+    margin: auto;
 
     font-family: monospace;
     color: white; 
@@ -163,12 +158,20 @@ body {
     z-index: 10;
 }
 
-    .Terminal > .heading {
+    .Contentbox.right {
+        
+        padding: .5em 1.4em;
+            padding-bottom: 10em;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .Contentbox > .heading {
         font-size: 2em;
         text-align: center;
     }
 
-    .Terminal > .headline {
+    .Contentbox > .headline {
 
         color: #DA9AFF;
         letter-spacing: .2em;
@@ -179,10 +182,17 @@ body {
             gap: 1em;
     }
 
-    .Terminal > .Timer {
-        margin-top: 1em;
-        margin-bottom: 2em;
+
+    .Contentbox > .address {
+
+        margin-top: 12em;
+        text-align: center;
     }
+
+        .Contentbox > .address .Greek {
+            width: 4em;
+            height: 4em;
+        }
 
 
 .Pseudocode {}
@@ -193,6 +203,8 @@ body {
 
 .Timer {
 
+    width: 100%;
+    margin-bottom: 1em;
     min-width: 5.5em;
     font-size: 6em;
     font-family: E1234, monospace;
@@ -204,26 +216,27 @@ body {
     
     justify-content: space-between;
 }
-.Timer, .Timer .wrapper {
-    position: relative;
-}
 
-.Timer .count {
-    text-shadow: .1em .1em 0 #081034;
-}
+    .Timer, .Timer > .wrapper, .Timer > * > .wrapper {
+        position: relative;
+    }
 
-.Timer .label {
-    
-    color: #081034;
-    font: .8em Odibee, sans-serif;
-    position: absolute;
-        bottom: -1em; left: 0;
-}
+    .Timer .count {
+        text-shadow: .1em .1em 0 #081034;
+    }
+
+    .Timer .label {
+        
+        color: #081034;
+        font: .8em Odibee, sans-serif;
+        position: absolute;
+            bottom: -1em; left: 0;
+    }
 
 
 .Location {
-    font: 1.2em Odibee;
-        text-align: right;
+    text-align: center;
+    font: 4em Odibee;
         color: #081034;
 }
 
@@ -420,30 +433,24 @@ body {
     }
 
         .Participants > .container > .heading {
+            font-size: 1.5em;
+            font-weight: bolder;
             background-color: #070F34;
             padding: 0 .3em;
             text-decoration: underline;
+            text-align: center;
+            max-width: 10em;
         }
+
+            .Participants > .container > .heading.disabled {
+                text-decoration: none;
+                pointer-events: none;
+            }
 
         .Participants > .container > .Icon {
             font-size: 10em;        
         }   
 
-
-
-
-.Register {
-    
-    min-height: 100vh;
-    display: flex;
-        justify-content: center;
-        align-items: center;
-}
-
-    .Register > .Terminal {
-        margin: 10em 0;
-        padding-left: 2em;
-    }
 
 .Gform {
     width: 100%;
@@ -524,10 +531,17 @@ ul {
     padding: 0;
 }
 
-.Patron {
+.Patrons {
     display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10em;
+        margin: 10em 0;
+}
+
+.Patron {
+    max-width: 44em;
 }
 
     .Patron > .info {
@@ -561,18 +575,15 @@ ul {
 
         font: 1.5em monospace;
         text-align: center;
+        letter-spacing: .2em;
         background-color: #070F34;
         padding: .5em 1.5em;
-        border-radius: 1em;
+        border-radius: .5em;
     }
 
-.Terminal > .address {
-
-    margin-top: 12em;
-    text-align: center;
-}
-
-.Terminal > .address .Greek {
-    width: 4em;
-    height: 4em;
+.Social {
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
 }
