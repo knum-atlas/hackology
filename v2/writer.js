@@ -1,17 +1,14 @@
 var i = 0;
-var txt = `Hackathon Hackology na Politechnice Lubelskiej to wyjątkowe wydarzenie,
-            które integruje studentów z różnych dziedzin poprzez wspólne rozwiązywanie 
-            problemów z użyciem technologii. To nie tylko okazja do wykorzystania wiedzy 
-            technicznej, ale także do kreatywnego myślenia i pracy zespołowej. 
-            Podczas hackathonu uczestnicy mają możliwość prezentowania swoich pomysłów 
-            i prototypów przed jury złożonym z ekspertów branżowych. 
-            To doskonała okazja do eksploracji nowatorskich rozwiązań technologicznych 
-            i rozwijania umiejętności programistycznych oraz projektowych.`;
 var speed = 25;
+
+
+let node = document.getElementById("writer");
+let txt = node.innerText;
+node.innerText = "";
 
 function typeWriter() {
   if (i < txt.length) {
-    document.getElementById("demo1").innerHTML += txt.charAt(i);
+    node.innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
   }
