@@ -30,7 +30,10 @@ body {
 
 
 .Nav {
+    font-family: monospace;
+    padding: 5em 0;
     background-color: #070F34;
+    text-align: center;
 }
 
     .Nav a { 
@@ -42,18 +45,9 @@ body {
 .Front {
 
     padding: 0 0 5em 0;
-    background-image: url('./background.png');
     min-height: 100vh;
      background-size: cover;
 }
-
-    .Front > .Nav {
-        margin-bottom: 15vh;
-    }
-
-    .Front > .Logo {
-        margin: 5em auto;
-    }
 
 .Back {
     padding-top: 5em;
@@ -118,16 +112,18 @@ body {
 .Header {
     
     display: flex;
+    flex-flow: column;
+    gap: 2em;
         justify-content: center; 
         align-items: center;
     
     background-color: #070F34;
     box-shadow: 0 .2em .2em;
-    max-width: 100%;
+    max-width: 100%; padding-bottom: 5em;
 }
 
     .Header > .name,
-    .Header > .container > .name {
+    .Header > .name {
      
         font: 5em Odibee, sans-serif;
             line-height: 1.5em;
@@ -135,24 +131,17 @@ body {
         margin: 0;
     }
 
-    .Header > .container {
-        padding: 0 1em; position: relative;
+    .Header > .date {
+
+        display: flex;
+
+        font-weight: bold;
+        font-family: E1234, monospace; 
+            font-size: 1.5em;
+            text-align: right;
+
+        text-shadow: .2em .2em 0 #0313a6;
     }
-
-        .Header > .container > .date {
-
-            font-family: E1234, monospace; 
-                font-size: 1.5em;
-                text-align: right;
-
-            text-shadow: .2em .2em 0 #0313a6;
-            
-            position: absolute; 
-                bottom: 0; left: 100%;
-            
-            display: flex;
-
-        }
 
 .Arrows {
     display: inline-flex;
@@ -459,28 +448,50 @@ scale: 1.2;
 
 
 .Participants {
+    min-height: 48em;
     display: flex;
         justify-content: center;
         align-items: center;
+
+    background-image: url('./background.png');
+        background-size: cover;
+        background-attachment: fixed;
 }
 
     .Participants > .container {
-        padding: 10em 1em;
+        padding: 2.8em;
         margin: 0 min(8em, 3vw);
+        box-shadow: 1em 1em 2em black;
+        background-color: #070F34;
+
         display: flex;
             flex-flow: column wrap;
             justify-content: center;
             align-items: center;
+
+        transition: transform 0.8s ease;
     }
 
+    .Participants > .container:hover {
+        transform: scale(1.1);
+    }
+
+        .Participants > .container.light { 
+            background-color: #DA9AFF;
+        }
+
         .Participants > .container > .heading {
+            color: #DA9AFF;
             font-size: 1.5em;
             font-weight: bolder;
-            background-color: #070F34;
             padding: 0 .3em;
             text-decoration: underline;
             text-align: center;
             max-width: 10em;
+        }
+
+        .Participants > .container.light > .heading {
+            color: #8013BE;
         }
 
             .Participants > .container > .heading.disabled {
