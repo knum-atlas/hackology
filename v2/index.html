@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="pl">
     <head>
+        <!-- Technikalia -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hackology</title>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-	    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
         <!-- Zmienia stylowanie strony niepotrzebnie -->
 	    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet"> -->
 	    
+        <!-- Zależności -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
-	
-        <link rel="stylesheet" href="./style.css">
-        <link rel="icon" type="image/png" href="logo+shadow.png">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+        
+        <!-- Flow -->
         <script src="writer.js" async defer></script>
+        <link rel="stylesheet" href="./style.css">
 
 
+        <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
@@ -29,6 +31,8 @@
         <meta name="msapplication-config" content="./fav/browserconfig.xml">
         <meta name="theme-color" content="#122041">
 
+        <!-- Meta tagi -->
+        <title>Hackology</title>
         <meta name="description" content="Dołącz do hackatonu Hackology Atlas na Politechnice Lubelskiej w Lublinie! Skupiamy się na machine learning. Zarejestruj się teraz!">
         <meta name="keywords" content="hackaton, Hackology Atlas, Politechnika Lubelska, Lublin, machine learning, programowanie, sztuczna inteligencja, AI, konkurs, wydarzenie technologiczne">
         <meta name="author" content="Hackology Team">
@@ -55,66 +59,63 @@
          
     <body>
 
-        <div class="Front">
+        <nav class="Nav">
+            <a class="link" href="./#register">Rejestracja</a>
+            <a class="link" href="partner.html">Partnerstwo</a>
+            <a class="link" href="regulamin.html">Regulamin</a>
+        </nav>
+        
+        <header class="Header">
 
-            <nav class="Nav">
-                <a href="#register">Rejestracja</a>
-                <a href="partner.html">Partnerstwo</a>
-                <a href="regulamin.html">Regulamin</a>
-            </nav>
-            
-            <header class="Header">
+            <div class="symbol">
+                <div class="Logo"></div>
+                <div class="Logo shadow"></div>
+            </div>
 
-                <div class="Logo">
-                    <div class="image"></div>
-                    <div class="shadow"></div>
-                </div>
+            <h1 class="name">Hackology</h1>
 
-                <h1 class="name">Hackology</h1>
+            <p class="date">
+                
+                <a href="#czas" class="info">
+                    <span>15.05.2025</span><br/>
+                    <span>Lublin</span>
+                </a>
 
-                <p class="date">
-                    
-                    <a href="#czas" class="info">
-                        <span>15.05.2025</span><br/>
-                        <span>Lublin</span>
-                    </a>
+                <a href="#czas" class="Arrows">
+                    <span class="column">&gt;&gt;&gt;</span>
+                    <span class="column">&gt;&gt;&gt;</span>
+                    <span class="column">&gt;&gt;&gt;</span>
+                </a>
+            </p>
 
-                    <a href="#czas" class="Arrows">
-                        <span class="column">&gt;&gt;&gt;</span>
-                        <span class="column">&gt;&gt;&gt;</span>
-                        <span class="column">&gt;&gt;&gt;</span>
-                    </a>
-                </p>
+        </header>
 
-            </header>
+        <nav class="Participants">
 
-            <div class="Participants">
+            <div class="Participant bright">
 
-                <aside class="container light">
+                <a href="partner.html" class="Icon -architecture"></a>
 
-                    <a href="partner.html">
-                        <img class="Greek" src="./ico/greek-column-svgrepo-com.svg">
-                    </a>
-
-                    <a class="heading" href="partner.html">Zostań partnerem!</a>
-
-                </aside>
-
-                <nav class="container dark">
-
-                    <a class="disabled" href="register.html">
-                        <img class="Greek" src="./ico/colosseum-rome-svgrepo-com.svg">
-                    </a>
-
-                    <a id="register" class="heading disabled" href="register.html">
-                        Rejestracja zawodników jeszcze nie wystartowała
-                    </a>
-
-                </nav>
+                <a class="heading" href="partner.html">Zostań partnerem!</a>
 
             </div>
 
-        </div>
+            <div class="Participant dark">
+
+                <a class="Icon -coloseum disabled" href="register.html"></a>
+
+                <a id="register" class="heading disabled" href="register.html">
+                    Zarejestruj zespół
+                </a>
+
+                <div class="Note">
+                    Rejestrowanie zespołów zaczniemu niedługo! 
+                </div>
+
+            </div>
+
+        </nav>
+
 
         <main class="Back">
 
@@ -155,6 +156,10 @@
                         <span class="postal">20-618 Lublin</span>
                     </p> -->
 
+                    <p class="Pseudocode">
+                        <br><span class="input">&gt;&gt;&gt;</span>czas_do_hackatonu()
+                    </p>
+
                     <section id="czas" class="Timer">
                         
                         <span class="label">Pozostało:</span>
@@ -171,6 +176,10 @@
                         <span class="label">dni</span>
 
                     </section>
+
+                    <p class="Pseudocode">
+                        <br><span class="input">&gt;&gt;&gt;</span>miejsce()
+                    </p>
 
                     <div class="Widgets">
 
@@ -259,164 +268,175 @@
             <section class="Mainparteners"></section>
             <h1 class="glitch">Partnerzy: </h1><br>
             <section class="partners" id="partners">
-              
-                <div><a href="partner.html"><img class="pLogoSize" alt="Partner 1" src="logo+shadow.png" href="partner.html"></a></div>
+            
+                <div><a href="partner.html"><img class="pLogoSize" alt="Partner 1" src="logo+shadow.png" href="partner.html"></a>
+                </div>
                 <div><a href="partner.html"><img class="pLogoSize" alt="Partner 2" src="logo+shadow.png"></a></div>
                 <div><a href="partner.html"><img class="pLogoSize" alt="Partner 3" src="logo+shadow.png"></a></div>
-              </section>
-              <section class="partners" id="partners">
-                
-                  <div><a href="partner.html"><img class="pLogoSize" alt="Partner 4" src="logo+shadow.png"></a></div>
-                  <div><a href="partner.html"><img class="pLogoSize" alt="Partner 5" src="logo+shadow.png"></a></div>
-                  <div><a href="partner.html"><img class="pLogoSize" alt="Partner 6" src="logo+shadow.png"></a></div>
-                  
-                </section>
-                
-                    <section id="team">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                                    <div class="glitch">
-                                        <h1 style="font-family: sans-serif; font-size: 120%; font-weight: 600;">Nasz Team</h1>
-                                    </div>
-                                </div>
+            </section>
+            <section class="partners" id="partners">
+            
+                <div><a href="partner.html"><img class="pLogoSize" alt="Partner 4" src="logo+shadow.png"></a></div>
+                <div><a href="partner.html"><img class="pLogoSize" alt="Partner 5" src="logo+shadow.png"></a></div>
+                <div><a href="partner.html"><img class="pLogoSize" alt="Partner 6" src="logo+shadow.png"></a></div>
+            
+            </section>
+            
+            <section id="team">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                            <div class="glitch">
+                                <h1 style="font-family: sans-serif; font-size: 120%; font-weight: 600;">Nasz Team</h1>
                             </div>
                         </div>
-                        <div class="testimonial-box">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="team-slider owl-carousel">
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/65VQDfjs/1.png"></div>
-                                                <div class="info-area">
-                                                    <h4>Person's Name</h4>
-                                                    <p>test podpis 1</p>
-                                                </div>
-                                            </div>
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/vmCM14qL/2.png"></div>
-                                                <div class="info-area">
-                                                    <h4>Person's Name]</h4>
-                                                    <p>test podpis 2</p>
-                                                </div>
-                                            </div>
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/vmCM14qL/2.png"></div>
-                                                <div class="info-area">
-                                                    <h4>Person's Name</h4>
-                                                    <p>test podpis 3</p>
-                                                </div>
-                                            </div>
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/593GTHB7/4.png"></div>
-                                                <div class="info-area">
-                                                    <h4>Person's Name</h4>
-                                                    <p>test popdis 4</p>
-                                                </div>
-                                            </div>
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/tJCrp53r/5.png"></div>
-                                                <div class="info-area">
-                                                    <h4>Person's Name</h4>
-                                                    <p>test popdis 5</p>
-                                                    </div>
-                                            </div>
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/tJCrp53r/5.png"></div>
-                                                <div class="info-area">
-                                                    <h4>test</h4>
-                                                    <p>test popdis 6</p>
-                                                    </div>
-                                            </div>
+                    </div>
+                </div>
+                <div class="testimonial-box">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="team-slider owl-carousel">
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/65VQDfjs/1.png"></div>
+                                        <div class="info-area">
+                                            <h4>Person's Name</h4>
+                                            <p>test podpis 1</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="team-slider owl-carousel">
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/65VQDfjs/1.png"></div>
-                                                <div class="info-area">
-                                                    <h4>Person's Name</h4>
-                                                    <p>Lorem ipsum dolor sit </p>
-                                                </div>
-                                            </div>
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/vmCM14qL/2.png"></div>
-                                                <div class="info-area">
-                                                    <h4>Person's Name]</h4>
-                                                    <p>Lorem ipsum dolor sit</p>
-                                                </div>
-                                            </div>
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/TYTxWM9S/3.png"></div>
-                                                <div class="info-area">
-                                                    <h4>Person's Name</h4>
-                                                    <p>Lorem ipsum dolor sit </p>
-                                                </div>
-                                            </div>
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/593GTHB7/4.png"></div>
-                                                <div class="info-area">
-                                                    <h4>Person's Name</h4>
-                                                    <p>Lorem ipsum dolor sit </p>
-                                                </div>
-                                            </div>
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/tJCrp53r/5.png"></div>
-                                                <div class="info-area">
-                                                    <h4>Person's Name</h4>
-                                                    </div>
-                                            </div>
-                                            <div class="single-box text-center">
-                                                <div class="img-area"><img alt="" class="img-fluid move-animation" src="https://i.postimg.cc/tJCrp53r/5.png"></div>
-                                                <div class="info-area">
-                                                    <h4>test</h4>
-                                                    </div>
-                                            </div>
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/vmCM14qL/2.png"></div>
+                                        <div class="info-area">
+                                            <h4>Person's Name]</h4>
+                                            <p>test podpis 2</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/vmCM14qL/2.png"></div>
+                                        <div class="info-area">
+                                            <h4>Person's Name</h4>
+                                            <p>test podpis 3</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/593GTHB7/4.png"></div>
+                                        <div class="info-area">
+                                            <h4>Person's Name</h4>
+                                            <p>test popdis 4</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/tJCrp53r/5.png"></div>
+                                        <div class="info-area">
+                                            <h4>Person's Name</h4>
+                                            <p>test popdis 5</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/tJCrp53r/5.png"></div>
+                                        <div class="info-area">
+                                            <h4>test</h4>
+                                            <p>test popdis 6</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
-                    </script> 
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-                    </script> 
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js">
-                    </script> 
-                    <script>
-                           $('.team-slider').owlCarousel({
-                               loop: true,            
-                               nav: false,
-                               autoplay: true,
-                               autoplayTimeout: 5000,
-                               smartSpeed: 250,
-                               margin: 20,
-                               responsive: {
-                                   0: {
-                                       items: 1
-                                   },
-                                   768: {
-                                       items: 2
-                                   },
-                                   991: {
-                                       items: 3
-                                   },
-                                   1200: {
-                                       items: 3
-                                   },
-                                   1920: {
-                                       items: 3
-                                   }
-                               }
-                           });
-                    </script>
-                
-                
-              
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="team-slider owl-carousel">
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/65VQDfjs/1.png"></div>
+                                        <div class="info-area">
+                                            <h4>Person's Name</h4>
+                                            <p>Lorem ipsum dolor sit </p>
+                                        </div>
+                                    </div>
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/vmCM14qL/2.png"></div>
+                                        <div class="info-area">
+                                            <h4>Person's Name]</h4>
+                                            <p>Lorem ipsum dolor sit</p>
+                                        </div>
+                                    </div>
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/TYTxWM9S/3.png"></div>
+                                        <div class="info-area">
+                                            <h4>Person's Name</h4>
+                                            <p>Lorem ipsum dolor sit </p>
+                                        </div>
+                                    </div>
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/593GTHB7/4.png"></div>
+                                        <div class="info-area">
+                                            <h4>Person's Name</h4>
+                                            <p>Lorem ipsum dolor sit </p>
+                                        </div>
+                                    </div>
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/tJCrp53r/5.png"></div>
+                                        <div class="info-area">
+                                            <h4>Person's Name</h4>
+                                        </div>
+                                    </div>
+                                    <div class="single-box text-center">
+                                        <div class="img-area"><img alt="" class="img-fluid move-animation"
+                                                src="https://i.postimg.cc/tJCrp53r/5.png"></div>
+                                        <div class="info-area">
+                                            <h4>test</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+            </script> 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+            </script> 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js">
+            </script> 
+            <script>
+                    $('.team-slider').owlCarousel({
+                        loop: true,            
+                        nav: false,
+                        autoplay: true,
+                        autoplayTimeout: 5000,
+                        smartSpeed: 250,
+                        margin: 20,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            768: {
+                                items: 2
+                            },
+                            991: {
+                                items: 3
+                            },
+                            1200: {
+                                items: 3
+                            },
+                            1920: {
+                                items: 3
+                            }
+                        }
+                    });
+            </script>
               
         </main>
         
@@ -426,9 +446,9 @@
 
                 <h2>Social media</h2>
 
-                <a target="_blank" class='Icon bx bxl-linkedin-square' href="https://www.linkedin.com/company/knumatlas/"></a>
+                <a target="_blank" class='Icon -linkedin -small' href="https://www.linkedin.com/company/knumatlas/"></a>
 
-                <a target="_blank" class='Icon bx bxl-facebook-square' href="https://www.facebook.com/knum.atlas/"></a>
+                <a target="_blank" class='Icon -facebook -small' href="https://www.facebook.com/knum.atlas/"></a>
 
             </nav>
 
