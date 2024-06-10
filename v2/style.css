@@ -1,3 +1,19 @@
+/*
+ * Generalnie, niektóre nazwy zmiennych spełniają pewien pattern:
+ * -> jeśli zaczyna się dużą literą to jest to główny element
+ * -> jeśli zaczyna się od małej litery to jest to element wewnętrzny
+ * -> jeśli zaczyna się od myślnika to oznacza typ elementu
+ *
+ * Większość selektorów używa bezpośredniej selekcji za pomocą znaku >
+ * żeby uniknąć niepożądanych stylów w innych elementach
+ *
+ * Przykłady: 
+ * -> .Drzewo > .liść           # liść to element drzewa
+ * -> .Drzewo.-zielone          # drzewo, które jest zielone
+ * -> .Drzewo > .liść.-duży     # duży liść w drzewie
+ */
+
+
 @font-face {
     font-family: 'E1234';
     src: url('./font/E1234.ttf') format('truetype');
@@ -28,12 +44,16 @@
 
 :root {
 
-    --color-bright: #DA9AFF;
+    --color-bright: #eccbff;
     --color-bright-dim: #af6bd6;
     --color-between: #8A21C6;
     --color-between-2: #0313a6;
     --color-dark: #070F34;
     --color-black: #000000;
+
+    --color-glass: rgba(121, 0, 121, 0.1);
+    --shadow-glass: 5px 5px 10px #3f0335, -5px -5px 10px #180255;
+    --shadow-glass-wide: 5px 5px 10px #3f0335, -5px -5px 10px #180255;
 
     --font-heading: 'Odibee', sans-serif;
     --font-note: 'Odibee', sans-serif;
@@ -48,8 +68,7 @@
 
     color: var(--color-bright);
     background-color: var(--color-dark);
-    
-    overflow-x: hidden;
+
 }
 
 * { box-sizing: border-box; }
@@ -81,6 +100,10 @@ body {
 
 .Icon.-small {
     width: 4em; height: 4em;
+}
+
+.Icon.-tiny {
+    width: 2em; height: 2em;
 }
 
 .Icon.-coloseum {
@@ -115,8 +138,10 @@ body {
 
 
 
-.Logo {
+.Icon.-logo {
 
+    display: block;
+    background-color: var(--color-bright);
     mask-image: url('./ico/logo.svg');
     -webkit-mask-image: url('./ico/logo.svg');
 
@@ -126,6 +151,11 @@ body {
 }
 
 .Logo.small {
+    width: 8em;
+    height: 8em;
+}
+
+.Logo.-small {
     width: 8em;
     height: 8em;
 }
@@ -156,6 +186,7 @@ body {
 
 .Nav > .link {
     display: inline-block;
+    margin: 0 1em;
     padding: .5em 1em;
     text-decoration: none;
     transition: background-color 0.8s ease, transform 0.8s ease;
@@ -180,7 +211,6 @@ body {
 
 .Back {
     padding-top: 5em;
-    padding-bottom: max(50vh, 20em);
 
     box-shadow: var(--shadow-in);
     background: url('./background.png') no-repeat 0 0 / cover;
@@ -212,13 +242,17 @@ body {
 
 .leftcolumn {
     float: left;
-    width: 25%;
+    width: 50%;
 }
 
 .rightcolumn {
     float: right;
-    /* Domyślnie ustawione obok leftcolumn */
-    width: 75%;
+    width: 50%;
+}
+
+.leftcolumn + .rightcolumn + *, 
+.rightcolumn + .leftcolumn + * {
+    clear:both;
 }
 
 @media screen and (max-width: 968px) {
@@ -234,12 +268,11 @@ body {
         margin-bottom: 20%;
     }
 
-    .timeline {
+    /* .timeline {
         margin-right: 200%;
-    }
+    } */
 
     .timeline-content {
-        width: 250%;
 
 
     }
@@ -263,12 +296,10 @@ body {
     width: 32em; height: 32em;
 }
 
-.Header > .symbol > .Logo {
+.Header > .symbol > .Icon {
 
     display: block; position: relative;
     width: inherit; height: inherit;
-
-    background-color: var(--color-bright);
 
     position: relative; z-index: 2;
 }
@@ -400,12 +431,17 @@ body {
 
 
 
-.Pseudocode { width: 100%;}
+.Pseudocode { 
+    width: 100%;
+}
 
 .Pseudocode .input {
     color: var(--color-between);
 }
 
+#writer {
+    min-height: 10em;
+}
 
 
 
@@ -415,7 +451,7 @@ body {
     width: 10.5em; max-width: 100%;
     margin-bottom: 1em;
     min-width: 5.5em;
-    font-size: 6em;
+    font-size: 5em;
     font-family: var(--font-digit);
     text-align: center;
 
@@ -425,6 +461,8 @@ body {
 
     justify-content: space-between;
 }
+
+#minutes + .label { display: none ;}
 
 .Timer, .Timer > .wrapper {
     position: relative;
@@ -452,8 +490,9 @@ body {
 
 
 .Location {
-    text-align: right;
-    font: 4em Odibee;
+    margin: 0;
+    text-align: left;
+    font: 2.4em var(--font-heading);
     color: var(--color-dark);
 }
 
@@ -465,7 +504,8 @@ body {
 
     color: var(--color-dark);
 
-    display: flex;
+    margin-top: 2.4em;
+    display: flex; flex-wrap: wrap;
     justify-content: center;
     align-items: flex-end;
 }
@@ -489,19 +529,11 @@ body {
 
 .Map {
 
-    border: solid;
-    outline: none;
-    border-radius: 6em;
+    border: solid; outline: none;
 
     width: 32em;
     height: 32em;
     margin: 1em 0;
-
-    background-color: var(--color-dark);
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0px 0px 10px;
-    ;
 }
 
 
@@ -510,31 +542,27 @@ body {
 
 .Gmap {
 
+    border: 0; outline: 0;
+    background-color: var(--color-dark);
     width: 31em;
     height: 31em;
+    margin: .5em 0;
     filter: invert(95%) hue-rotate(90deg);
-    border: solid;
-    outline: none;
-    border-radius: 6em;
 }
 
 
 
 .timeline-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
+    padding-top: 30em;
     /*background-image: linear-gradient(to bottom,rgba(183, 3, 147, 0)2%,rgba(183, 3, 147, 0.15) ,rgba(183, 3, 147, 0.25),rgba(183, 3, 147, 0.35)20%, rgba(148,4,138,0.45),rgba(138, 0, 124, 0.35),rgba(183, 3, 147, 0.25),rgba(183, 3, 147, 0.0));
    backdrop-filter: blur(6px) brightness(1);*/
     -webkit-backdrop-filter: blur(3px) brightness(0);
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     min-height: 150vh;
 
-    font-family: Jost;
     position: relative;
     z-index: 4;
-    padding: 0px 20% 40% 40%;
 }
 
 .Tiheading {
@@ -549,7 +577,6 @@ body {
 }
 
 .timeline {
-    padding-right: 2em;
     width: auto;
     height: auto;
     max-width: 2200px;
@@ -561,25 +588,24 @@ body {
 .timeline-content {
     padding: 10px;
     font-size: 1.5em;
-    background: rgba(12, 0, 121, 0.35);
-    -webkit-box-shadow: 5px 5px 10px #5a054c, -5px -5px 10px #180255;
-    box-shadow: 5px 5px 10px #3f0335, -5px -5px 10px #180255;
+    color: var(--color-brigth);
+    background: var(--color-glass);
+    -webkit-box-shadow: var(--shadow-glass);
+    box-shadow: var(--shadow-glass);
     border-radius: 5px;
-    color: white;
     padding: 1.75rem;
     transition: 0.4s ease;
     overflow-wrap: break-word !important;
-    margin: 10px 10px 0px 10px;
-    margin-bottom: 20px;
+    margin: 0 1em;
     border-radius: 6px;
     z-index: 4;
+    backdrop-filter: blur(3px);
 }
 
-.timeline-component {
-    margin: 0px 0px 20px 20px;
-}
+.timeline-component > .glitch { font-size: 1em;}
 
 @media screen and (min-width: 768px) {
+    
     .timeline {
 
         /* --color-bright: #25dbf3;
@@ -592,9 +618,13 @@ body {
 
     .timeline-middle {
         position: relative;
-        background-image: linear-gradient(45deg, var(--color-bright), var(--color-between), var(--color-dark));
+        background-image: linear-gradient(45deg, var(--color-between), var(--color-bright), var(--color-between));
         width: 5px;
         height: 100%;
+    }
+
+    .timeline-middle:last-child {
+        background: none;
     }
 
     .main-middle {
@@ -609,50 +639,48 @@ body {
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        background-image: linear-gradient(45deg, var(--color-bright), var(--color-between), var(--color-dark), var(--color-between), var(--color-bright));
+        background-image: linear-gradient(45deg, var(--color-bright), var(--color-between), var(--color-between-2), var(--color-between), var(--color-bright));
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
     }
 }
 
 
-.Mainparteners {
+.Partners {
+    clear: both;
     margin-top: 95%;
-    /* Dostosuj margines dla sekcji partnerów */
-
     text-align: center;
-
     align-items: center;
-
 }
 
-.partners {
+.Partners > .glitch {
+    background-color: var(--color-dark);
+    box-shadow: var(--shadow-glass);
+}
+
+.Partners > .list {
     display: flex;
     justify-content: center;
     margin: 5% 0;
     gap: 10%;
 }
 
-.partners div {
-    border: 3px solid --var(color-bright);
+.Partners > .list > div {
+    border: 3px solid var(color-bright);
     border-radius: 10%;
-    min-width: 50px;
-    min-height: 40px;
     padding: 20px;
     text-align: center;
-    margin-right: 15%;
-    margin-bottom: 10%;
-    gap: 10%;
+
+    
+    color: var(--color-brigth);
+    background: var(--color-glass);
+    -webkit-box-shadow: var(--shadow-glass);
+    box-shadow: var(--shadow-glass);
+    backdrop-filter: blur(3px);
+    transition: background-color 0.8s ease, scale 0.8s ease;
 }
 
-.pLogoSize {
-    max-width: 120%;
-    max-height: 8em;
-    margin: auto;
-    transition: background-color 0.8s ease, transform 0.8s ease;
-}
-
-.pLogoSize:hover {
+.Partners > .list > div:hover {
     scale: 1.2;
 }
 
@@ -664,10 +692,14 @@ body {
 
 .Footer {
 
+    padding-top: 5em;
+    gap: 5em;
+
     text-align: center;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .Footer a {
@@ -686,6 +718,18 @@ body {
 .Sign {
 
     width: 100%; padding: 1em 1em; margin: 0;
+    position: relative;
+}
+
+.Sign {
+    display: flex;
+    align-items: flex-end;
+    flex-flow: wrap row;
+    justify-content: center;
+    gap: 1em;
+}
+.Sign > .Logo {
+    width: 10em;
 }
 
 
@@ -740,9 +784,9 @@ body {
 }
 
 .Participant > .Note {
-    margin-left: 12em;
-    margin-bottom: 4em;
-    transform: rotate(12deg);
+    margin-right: 6em;
+    margin-bottom: 8em;
+    transform: rotate(-6deg);
     transition: transform 0.8s ease;
 }
 
@@ -761,11 +805,11 @@ body {
 }
 
 .glitch {
-    --color-bright: rgba(234, 0, 255, 0.75);
-    --color-dark: rgba(12, 0, 121, 0.75);
-    --color-between: rgba(0, 0, 255, .75);
+    --color-inner-bright: rgba(234, 0, 255, 0.75);
+    --color-inner-between-2: rgba(12, 0, 121, 0.75);
+    --color-inner-between: rgba(0, 0, 255, .75);
 
-    color: white;
+    color: var(--color-brigth);
     text-align: center;
     font-size: 4rem;
     font-weight: 600;
@@ -773,39 +817,39 @@ body {
     text-transform: uppercase;
 
     text-shadow:
-        0.05em 0 0 var(--color-bright),
-        -0.025em -0.05em 0 var(--color-dark),
-        0.025em 0.05em 0 var(--color-between);
+        0.05em 0 0 var(--color-inner-bright),
+        -0.025em -0.05em 0 var(--color-inner-between-2),
+        0.025em 0.05em 0 var(--color-inner-between);
     animation: glitch 1900ms infinite;
 }
 
 @keyframes glitch {
     0%, 14% {
         text-shadow:
-            0.05em 0 0 var(--color-bright),
-            -0.025em -0.05em 0 var(--color-dark),
-            0.025em 0.05em 0 var(--color-between);
+            0.05em 0 0 var(--color-inner-bright),
+            -0.025em -0.05em 0 var(--color-inner-between-2),
+            0.025em 0.05em 0 var(--color-inner-between);
     }
 
     15%, 49% {
         text-shadow:
-            -0.05em 0 0 var(--color-bright),
-            0.025em 0.05em 0 var(--color-dark),
-            -0.025em -0.05em 0 var(--color-between);
+            -0.05em 0 0 var(--color-inner-bright),
+            0.025em 0.05em 0 var(--color-inner-between-2),
+            -0.025em -0.05em 0 var(--color-inner-between);
     }
 
     50%, 99% {
         text-shadow:
-            0.05em 0 0 var(--color-bright),
-            -0.025em -0.05em 0 var(--color-dark),
-            0.025em 0.05em 0 var(--color-between);
+            0.05em 0 0 var(--color-inner-bright),
+            -0.025em -0.05em 0 var(--color-inner-between-2),
+            0.025em 0.05em 0 var(--color-inner-between);
     }
 
     100% {
         text-shadow:
-            -0.05em -0.05em 0 var(--color-bright),
-            0.025em 0.05em 0 var(--color-dark),
-            -0.025em -0.05em 0 var(--color-between);
+            -0.05em -0.05em 0 var(--color-inner-bright),
+            0.025em 0.05em 0 var(--color-inner-between-2),
+            -0.025em -0.05em 0 var(--color-inner-between);
     }
 }
 
@@ -851,10 +895,6 @@ ul {
 
 
 
-#team {
-    padding: 10px 0;
-    backdrop-filter: blur(3px);
-}
 
 .single-box {
     border: 1px solid #dc25f1;
@@ -967,6 +1007,30 @@ ul {
     }
 }
 
+.Reg {
+    margin: 10em 0;
+}
+
+.Ruleset {
+    gap: 4.4em;
+    padding-bottom: 16em;
+}
+
+.Ruleset > .files {
+    text-align: right;
+    width: 80%;
+}
+
+.Ruleset > .heading {
+    font-size: 2.4em;
+    width: 80%; max-width: 32em;
+    text-align: left;
+}
+
+.Ruleset > .chapter{
+    width: 80%; min-width: 32em;
+}
+
 
 
 
@@ -1008,11 +1072,7 @@ ul {
 
 
 .Sponsorship > .description {
-    max-width: 48em;
-}
-
-.Sponsorship > .description > p {
-    width: 100%;
+    width: 48em; max-width: 100%;
 }
 
 .Sponsorship > .description > .list {
@@ -1040,4 +1100,59 @@ ul {
 
 .Sponsorship > .contact > .Icon {
     width: 4em; height: 4em;
+}
+
+.Social {
+    display: flex; gap: 1em;
+    align-items: center;
+}
+
+
+.Team {
+    margin-top: min(50vh, 20em);
+    padding: 5em 1em;
+    display: flex; flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.Team > .Contentbox {
+    max-width: 32em; 
+    margin: 0;
+    margin-top: 10vw;
+}
+
+
+
+.Photo {
+    position: relative;
+    padding: 2em 1.5em;
+}
+
+.Photo > .raster {
+    width: 48em; max-width: 100%;
+    
+    opacity: 0.90;
+    box-shadow: var(--shadow-glass);
+    border-radius: 1em;
+    filter:
+        brightness(1)
+        contrast(.8)
+        grayscale(0)
+        hue-rotate(-20deg)
+        saturate(1.5)
+        sepia(0);
+}
+
+.Photo > .heading {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 10;
+    margin: 0;
+}
+
+
+
+.Logo {
+    max-width: 16em;
 }

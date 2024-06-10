@@ -22,7 +22,7 @@ minutes: document.getElementById('minutes'),
 seconds: document.getElementById('seconds')
 };
 
-const targetDate = new Date('2024-10-05T09:30:00Z').getTime();
+const targetDate = new Date('2024-10-19T09:30:00Z').getTime();
 
 const interval = setInterval(() => {
 const now = new Date().getTime();
