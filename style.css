@@ -152,28 +152,6 @@ body {
     -webkit-mask-repeat: no-repeat;
 }
 
-.Brand {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    display: block;
-    width: 14em; height: 6.5em;
-    max-width: 100%;
-}
-
-.Brand.-large {
-    width: 24em; height: 12em;
-}
-
-.Brand.-lbl {
-    background-image: url('./img/Lublin.logo+kolor.png');
-}
-
-.Brand.-pollub {
-    background-image: url('./img/Rektor.patron.png');
-}
-
 
 
 
@@ -574,6 +552,10 @@ tr.Timer + tr > .Mark:first-child {
     margin-bottom: 15em;
 }
 
+.Partners.-main {
+    margin-bottom: 24em;
+}
+
 .Partners > .glitch {
     background-color: var(--color-dark);
     box-shadow: var(--shadow-glass);
@@ -592,23 +574,34 @@ tr.Timer + tr > .Mark:first-child {
     gap: max(10%, 3em);
 }
 
-.Partners > .list > div {
+.Partner {
     border: 3px solid var(color-bright);
     border-radius: 10%;
     padding: 20px;
     text-align: center;
 
-    
     color: var(--color-brigth);
-    background: var(--color-glass);
+    background-color: var(--color-glass);
     -webkit-box-shadow: var(--shadow-glass);
     box-shadow: var(--shadow-glass);
     backdrop-filter: blur(3px);
-    transition: background-color 0.8s ease, scale 0.8s ease;
+    transition: scale 0.8s ease;
 }
 
-.Partners > .list > div:hover {
+.Partner:hover {
     scale: 1.2;
+}
+
+.Partner.-lbl {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/Lublin.logo.png');
+
+    display: block;
+    width: 24em; height: 14em;
+    max-width: 100%;
+    border-radius: 0;
 }
 
 
@@ -1162,12 +1155,4 @@ ul {
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
     }
-}
-
-@media screen and (max-width: 768px) {
-
-
-    .Brand.-widescreen-placeholder {
-        display: none;
-    }   
 }
