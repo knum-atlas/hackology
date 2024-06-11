@@ -656,9 +656,8 @@ tr.Timer + tr > .Mark:first-child {
 
 .Sign {
     display: flex;
-    align-items: flex-end;
-    flex-flow: wrap row;
-    justify-content: center;
+    align-items: center;
+    flex-flow: column;
     gap: 1em;
 }
 .Sign > .Logo {
