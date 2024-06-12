@@ -86,16 +86,19 @@ body {
 
 
 
-
+.-copied {
+    transition: background-color 0.5s cubic-bezier(.17,1.28,.83,.67);
+    background-color: var(--color-between);
+}
 
 .Icon {
     display: inline-block;
     width: 8em; height: 8em;
     background-color: var(--color-bright);
-
-    mask-size: cover; mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    -webkit-mask-repeat: no-repeat;
+    transition: background-color 0.2s ease;
+    
+    mask-size: contain; -webkit-mask-size: contain;
+    mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat;
 }
 
 .Icon.-large {
@@ -114,6 +117,12 @@ body {
 
     mask-image: url('./ico/colosseum-rome-svgrepo-com.svg');
     -webkit-mask-image: url('./ico/colosseum-rome-svgrepo-com.svg');
+}
+
+.Icon.-copy {
+    cursor: pointer;
+    mask-image: url('./ico/iconmonstr-copy-lined.svg');
+    -webkit-mask-image: url('./ico/iconmonstr-copy-lined.svg');
 }
 
 .Icon.-architecture {
@@ -549,7 +558,8 @@ tr.Timer + tr > .Mark:first-child {
 .Partners {
     text-align: center;
     align-items: center;
-    margin-bottom: 15em;
+    margin-bottom: min(15em, 20vh);
+    min-height: 64vh;
 }
 
 .Partners.-main {
@@ -1041,7 +1051,6 @@ ul {
 
 
 .Team {
-    margin-top: min(50vh, 20em);
     padding: 5em 1em;
     display: flex; flex-wrap: wrap;
     align-items: center;

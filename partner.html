@@ -1,35 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
     <head>
-        <!-- Technikalia -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- Zmienia stylowanie strony niepotrzebnie -->
-	    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	    
-        <!-- Zależności -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-	    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-
-        
-        <!-- Flow -->
-        <link rel="stylesheet" href="./style.css">
-        <script src="writer.js" async defer></script>
-        <script src="center.js"async defer></script>
-
-
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
-        <link rel="manifest" href="./fav/site.webmanifest">
-        <link rel="mask-icon" href="./fav/safari-pinned-tab.svg" color="#bb5bd5">
-        <link rel="shortcut icon" href="./fav/favicon.ico">
-        <meta name="msapplication-TileColor" content="#9f00a7">
-        <meta name="msapplication-config" content="./fav/browserconfig.xml">
-        <meta name="theme-color" content="#122041">
-
         <!-- Meta tagi -->
         <title>Hackology - zostań partnerem hackathonu</title>
         <meta name="description" content="Dołącz do hackathonu Hackology Atlas na Politechnice Lubelskiej w Lublinie! Skupiamy się na machine learning. Zarejestruj się teraz!">
@@ -53,6 +24,27 @@
         <meta name="twitter:image" content="https://www.hackology.pl/images/hackathon.jpg">
         <meta name="twitter:site" content="@HackologyAtlas">
         <meta name="twitter:creator" content="@HackologyTeam">
+
+        
+        <!-- IDENTYCZNE DLA KAŻDEJ ZE STRONY -->
+        <!-- Technikalia -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    
+        <!-- Flow -->
+        <link rel="stylesheet" href="./style.css">
+        <script src="utils.js" async defer></script>
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
+        <link rel="manifest" href="./fav/site.webmanifest">
+        <link rel="mask-icon" href="./fav/safari-pinned-tab.svg" color="#bb5bd5">
+        <link rel="shortcut icon" href="./fav/favicon.ico">
+        <meta name="msapplication-TileColor" content="#9f00a7">
+        <meta name="msapplication-config" content="./fav/browserconfig.xml">
+        <meta name="theme-color" content="#122041">
     </head>
     <body>
 
@@ -78,18 +70,21 @@
                 <div class="Icon -architecture -large"></div>
                 <div>
                     <h2 class="heading">Pomóż nam<br>zorganizować hackathon!</h2>
-                    <address class="email">Hackology@pollub.edu.pl</address>
+                    <div style="display: flex;gap:1em;align-items:center;">
+                        <address id="email" class="email">hackology@pollub.edu.pl</address>
+                        <button class="Icon -tiny -copy" data-copy="email"></button>
+                    </div>
                 </div>
             </header>
 
             <div class="description Contentbox">
 
-                <p>Szukamy firm, które chciałyby z nami współpracować przy organizacji nadchodzącego hackathonu! To świetna okazja, aby zaistnieć w świecie technologii, spotkać utalentowanych ludzi i pokazać swoją markę w kreatywnym środowisku.</p>
+                <p>Szukamy firm, które chciałyby z nami <b>współpracować przy organizacji Hackology</b>! To świetna okazja, aby zaistnieć w świecie technologii, spotkać utalentowanych ludzi i pokazać swoją markę w kreatywnym środowisku.</p>
                 <p>Jesteśmy otwarci na różne formy współpracy:</p>
                 <ul class="list">
-                    <li><strong>Wsparcie finansowe</strong>: Pomóż nam zrealizować to wydarzenie na najwyższym poziomie, a w zamian zyskasz widoczność swojej marki.</li>
-                    <li><strong>Promocja twojej firmy</strong>: Twoje logo może pojawić się na naszych materiałach promocyjnych, w mediach społecznościowych oraz podczas samego wydarzenia.</li>
-                    <li><strong>Warsztaty i prezentacje</strong>: Chcesz podzielić się swoją wiedzą lub przedstawić swoje produkty? Zapraszamy do prowadzenia warsztatów lub prezentacji dla uczestników.</li>
+                    <li><strong>Wsparcie finansowe</strong>: Pomóż nam zrealizować to wydarzenie na najwyższym poziomie, a&nbsp;w&nbsp;zamian zyskasz widoczność swojej marki.</li>
+                    <li><strong>Promocja twojej firmy</strong>: Twoje logo może pojawić się na naszych materiałach promocyjnych,&nbsp;w&nbsp;mediach społecznościowych oraz podczas samego wydarzenia.</li>
+                    <li><strong>Warsztaty i prezentacje</strong>: Chcesz podzielić się swoją wiedzą lub przedstawić swoje produkty? Zapraszamy&nbsp;do&nbsp;prowadzenia warsztatów lub prezentacji dla uczestników.</li>
                     <li><strong>Networking i rekrutacja</strong>: Hackathon to doskonałe miejsce, aby poznać potencjalnych pracowników i nawiązać cenne kontakty biznesowe.</li>
                 </ul>
                 <p>Chcemy, aby nasze wydarzenie było nie tylko miejscem rywalizacji, ale również przestrzenią do nauki, wymiany pomysłów i budowania relacji.</p>
@@ -99,8 +94,8 @@
             
             <div class="contact">
                 <a href="mailto:hackology@pollub.edu.pl" class="Icon -hermes"></a>
-                <h3>Kontakt Mailowy</h3>
-                <a href="mailto:hackology@pollub.edu.pl">Hackology@pollub.edu.pl</a>
+                <h3>Kontakt mailowy</h3>
+                <a href="mailto:hackology@pollub.edu.pl">hackology@pollub.edu.pl</a>
             </div>
 
             <div class="background"></div>
