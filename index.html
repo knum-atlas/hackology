@@ -36,15 +36,15 @@
         <script src="utils.js" async defer></script>
 
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
-        <link rel="manifest" href="./fav/site.webmanifest">
-        <link rel="mask-icon" href="./fav/safari-pinned-tab.svg" color="#bb5bd5">
-        <link rel="shortcut icon" href="./fav/favicon.ico">
-        <meta name="msapplication-TileColor" content="#9f00a7">
-        <meta name="msapplication-config" content="./fav/browserconfig.xml">
-        <meta name="theme-color" content="#122041">
+        <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png?v=2">
+        <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png?v=2">
+        <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png?v=2">
+        <link rel="manifest" href="./fav/site.webmanifest?v=2">
+        <link rel="mask-icon" href="./fav/safari-pinned-tab.svg?v=2" color="#5bbad5">
+        <link rel="shortcut icon" href="./fav/favicon.ico?v=2">
+        <meta name="msapplication-TileColor" content="#603cba">
+        <meta name="msapplication-config" content="./fav/browserconfig.xml?v=2">
+        <meta name="theme-color" content="#ffffff">
     </head>
    
          
@@ -67,15 +67,15 @@
 
             <p class="date">
                 
-                <a href="#czas" class="info">
+                <a href="#odliczanie" class="info">
                     <span>19.10.2024</span><br>
                     <span>Lublin</span>
                 </a>
 
-                <a href="#czas" class="Arrows">
-                    <span class="column">&gt;&gt;&gt;</span>
-                    <span class="column">&gt;&gt;&gt;</span>
-                    <span class="column">&gt;&gt;&gt;</span>
+                <a href="#odliczanie" class="Arrows">
+                    <span class="column">&lt;&lt;&lt;</span>
+                    <span class="column">&lt;&lt;&lt;</span>
+                    <span class="column">&lt;&lt;&lt;</span>
                 </a>
             </p>
 
@@ -100,7 +100,7 @@
                 </a>
 
                 <div class="Note">
-                    Rejestracja rusza 1 lipca
+                    Rejestracja rusza już 1 lipca!
                 </div>
 
             </div>
@@ -129,6 +129,12 @@
                         <p>
                             <span class="input">&gt;&gt;&gt;</span> o_hackology()
                         </p>
+
+                        <span class="Social">
+                            <a target="_blank" class='Icon -linkedin -tiny' href="https://www.linkedin.com/showcase/hackology-ai-hackathon/about/" target="_blank"></a>
+                            <a target="_blank" class='Icon -facebook -tiny' href="https://www.facebook.com/hackologyaihackathon/" target="_blank"></a>
+                            <a target="_blank" class='Icon -instagram -tiny' href="https://www.instagram.com/hackologyatlas/" target="_blank"></a>
+                        </span>
                         
                         <p id="writer">                            
                             Hackathon <b>Hackology</b> na Politechnice Lubelskiej to wyjątkowe wydarzenie,
@@ -146,26 +152,27 @@
                         <br><span class="input">&gt;&gt;&gt;</span>odliczanie()
                     </p>
 
-                    <table id="czas">
-                        <tr class="Timer">
-                            <td id="days">365</td>
-                            <td>+</td>
-                            <td id="hours">59</td>
-                            <td>:</td>
-                            <td id="minutes">59</td>
-                            <td>:</td>
-                            <td id="seconds">59</td>
-                        </tr>
-                        <tr>
-                            <td class="Mark">dni</td>
-                            <td></td>
-                            <td class="Mark">godzin</td>
-                            <td></td>
-                            <td class="Mark">minut</td>
-                            <td></td>
-                            <td class="Mark">sekund</td>
-                        </tr>
-                    </table>
+                    <section id="odliczanie">
+
+                        <span class="Timer -large" id="days">365</span> dni<br>
+                        <table>
+                            <tr class="Timer">
+                                <td class="cell" id="hours">59</td>
+                                <td>:</td>
+                                <td class="cell" id="minutes">59</td>
+                                <td>:</td>
+                                <td class="cell" id="seconds">59</td>
+                            </tr>
+                            <tr>
+                                <td>godzin</td>
+                                <td></td>
+                                <td>minut</td>
+                                <td></td>
+                                <td>sekund</td>
+                            </tr>
+                        </table>
+
+                    </section>
 
                     <p class="Pseudocode">
                         <br><span class="input">&gt;&gt;&gt;</span>miejsce()
@@ -210,12 +217,12 @@
                         </div>
 
                         <div class="timeline-component timeline-content">
-                            <h3>Rejestracja zawodników</h3>
-                            <p>1 lipca - %&$#&%#</p>
+                            <h3 class="heading">Rejestracja zawodników</h3>
+                            <p>1 lipca - 30 września</p>
                         </div>
                         
                         <div class="timeline-component timeline-content">
-                            <h3>Prezentacja zadania</h3>
+                            <h3 class="heading">Prezentacja zadania</h3>
                             <p>19 października</p>
                         </div>
             
@@ -232,12 +239,12 @@
                         </div>
                         
                         <div class=" timeline-component timeline-content">
-                            <h3>Uczenie maszyn</h3>
+                            <h3 class="heading">Rywalizacja</h3>
                             <p>19-20 października</p>
                         </div>
             
                         <div class=" timeline-component timeline-content">
-                            <h3>Wyniki</h3>
+                            <h3 class="heading">Wyniki</h3>
                             <p>20 paździenika</p>
                         </div>
                         <div class="timeline-middle">
@@ -329,7 +336,7 @@
                     Sami wielokrotnie uczestniczyliśmy w hackathonach - często z sukcesami.
                     Pora na naszą autorską imprezę!<br><br>
 
-                    Znajdź nas w internecie:<br><br>
+                    Znajdź nasze koło w internecie:<br><br>
 
                     <span class="Social">
                         <a target="_blank" class='Icon -linkedin -tiny' href="https://www.linkedin.com/company/knumatlas/"></a>
@@ -353,7 +360,7 @@
 
             <p class="Sign">
                 <img class="Logo" src="img/Atlas.logo.png" alt="">
-                &lt;Koło Naukowe Uczenia Maszynowego ATLAS Politechniki Lubelskiej &copy; 2024/&gt;
+                &lt;Koło&nbsp;Naukowe&nbsp;Uczenia&nbsp;Maszynowego ATLAS Politechniki&nbsp;Lubelskiej&nbsp;&copy;&nbsp;2024/&gt;
             </p>
 
         </footer>

@@ -15,15 +15,22 @@
 
 
 @font-face {
-    font-family: 'E1234';
-    src: url('./font/E1234.ttf') format('truetype');
+    font-family: 'Chillax';
+    src: url('./font/Chillax_Complete/Fonts/TTF/Chillax-Variable.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Odibee';
-    src: url('./font/Odibee_Sans/OdibeeSans-Regular.ttf') format('truetype');
+    font-family: 'JosefinSans';
+    src: url('./font/JosefinSans/JosefinSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Array';
+    src: url('./font/Array_Complete/Fonts/OTF/Array-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -55,11 +62,11 @@
     --shadow-glass: 5px 5px 10px #3f0335, -5px -5px 10px #180255;
     --shadow-glass-wide: 5px 5px 10px #3f0335, -5px -5px 10px #180255;
 
-    --font-heading: 'Odibee', sans-serif;
-    --font-note: 'Odibee', sans-serif;
+    --font-heading: 'JosefinSans', sans-serif;
+    --font-note: 'JosefinSans', sans-serif;
     --font-text: "Kode Mono", monospace;
     --font-readable: "Barlow", sans-serif;
-    --font-digit: 'E1234', monospace;
+    --font-digital: "Array", monospace;
 
     --shadow-box: 1em 1em 1em black;
     --shadow-in: inset 0 0 3em black;
@@ -97,7 +104,7 @@ body {
     background-color: var(--color-bright);
     transition: background-color 0.2s ease;
     
-    mask-size: contain; -webkit-mask-size: contain;
+    mask-size: 100%; -webkit-mask-size: 100%;
     mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat;
 }
 
@@ -149,12 +156,18 @@ body {
     -webkit-mask-image: url('./ico/iconmonstr-linkedin-2.svg');
 }
 
+.Icon.-instagram {
+
+    mask-image: url('./ico/iconmonstr-instagram-12.svg');
+    -webkit-mask-image: url('./ico/iconmonstr-instagram-12.svg');
+}
+
 .Icon.-logo {
 
     display: block;
     background-color: var(--color-bright);
-    mask-image: url('./img/Hackology.logo.png');
-    -webkit-mask-image: url('./img/Hackology.logo.png');
+    mask-image: url('./img/Hackology.logo.svg');
+    -webkit-mask-image: url('./img/Hackology.logo.svg');
 
     mask-size: contain; mask-repeat: no-repeat;
     -webkit-mask-size: contain;
@@ -282,7 +295,7 @@ body {
 .Header>.name,
 .Header>.name {
 
-    font: 5em Odibee, sans-serif;
+    font: 5em var(--font-heading);
     line-height: 1.5em;
 
     margin: 0;
@@ -293,7 +306,6 @@ body {
     display: flex;
 
     font-weight: bold;
-    font-family: var(--font-digit);
     font-size: 1.5em;
     text-align: right;
 
@@ -333,14 +345,14 @@ body {
 
 
 .Arrows {
+    font-size: 130%;
     display: inline-flex;
-    margin: 0 .5em;
+    margin: .5em;
 }
 
 .Arrows>.column {
-    transform: rotate(90deg) translateX(-.25em);
+    transform: rotate(270deg) translateX(-.25em);
     width: 1em;
-    height: 1em;
 }
 
 
@@ -381,7 +393,7 @@ body {
 
     color: var(--color-bright);
     letter-spacing: .2em;
-    font-family: Odibee;
+    font-family: var(--font-heading);
     font-size: 2em;
     display: flex;
     align-items: center;
@@ -417,22 +429,18 @@ body {
 
 .Timer {
 
-    font-size: min( max(2.4em, 4vw), 6em );
-    font-family: var(--font-digit);
-    text-shadow: .1em .1em 0 var(--color-dark);
+    font: 3em var(--font-digital), monospace;
+
+    font-size: min( max(3.2em, 4vw), 6em );
 }
 
-tr.Timer + tr > .Mark:first-child { 
-    text-align: right;
+.Timer > .cell { 
+    width: 1.5em;
 }
 
-.Mark {
-
-    color: var(--color-dark);
-    font: 3em Odibee, sans-serif;
-    text-shadow: none;
+.Timer.-large {
+    font-size: calc(min( max(3.2em, 4vw), 6em ) * 2);
 }
-
 
 
 
@@ -440,7 +448,7 @@ tr.Timer + tr > .Mark:first-child {
 .Location {
     margin: 0;
     text-align: left;
-    font: 2.4em var(--font-heading);
+    font: 1.4em var(--font-note);
     color: var(--color-dark);
 }
 
@@ -513,15 +521,14 @@ tr.Timer + tr > .Mark:first-child {
     z-index: 4;
 }
 
-.Tiheading {
-    font-size: 5em;
-    text-align: center;
-}
-
 .design {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.timeline .heading {
+    font-family: var(--font-heading);
 }
 
 .timeline {
@@ -719,6 +726,7 @@ tr.Timer + tr > .Mark:first-child {
 }
 
 .Participant > .Note {
+    text-align: center;
     margin-right: 6em;
     margin-bottom: 8em;
     transform: rotate(-6deg);
@@ -1023,8 +1031,7 @@ ul {
 }
 
 .Sponsorship > .header .heading {
-    font: 200% var(--font-heading);
-    letter-spacing: .24em;
+    font: 200% var(--font-note);
 }
 
 .Sponsorship > .header .email {
