@@ -16,4 +16,5 @@ Zewnętrzne zasoby chronione obecne na stronie:
 Narzędzia:
 
 * [realfavicongenerator.net](https://realfavicongenerator.net);
+* [icomoon.io](https://icomoon.io/app/#/select)
 * [krea.ai](https://krea.ai).

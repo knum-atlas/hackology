@@ -134,22 +134,38 @@ body {
 .Icon.-small { font-size: 4em;}
 .Icon.-tiny { font-size: 2em;}
 
-.Icon.-coloseum::before      {content: "\e900";}
-.Icon.-architecture::before  {content: "\e901";}
-.Icon.-logo::before          {content: "\e902";}
-.Icon.-hermes::before        {content: "\e903";}
-.Icon.-copy::before          {content: "\e904";}
-.Icon.-facebook::before      {content: "\e905";}
-.Icon.-instagram::before     {content: "\e906";}
-.Icon.-linkedin::before      {content: "\e907";}
+.Icon.-logo::before {content: "\e902";}
+.Icon.-logo::after {
 
+    content: "\e908";
+    font-size: 92%;
+    
+    position: absolute;
+    left: 50%; top: 50%; z-index: -1;
+    transform: translate(-50%, -50%);
+    
+    color: var(--color-between)
+}
+
+.Icon.-coloseum::before      {content: "\e900";}
 .Icon.-shadowdrop.-coloseum::after      {content: "\e900";}
+
+.Icon.-architecture::before  {content: "\e901";}
 .Icon.-shadowdrop.-architecture::after  {content: "\e901";}
-.Icon.-shadowdrop.-logo::after          {content: "\e902";}
+
+.Icon.-hermes::before        {content: "\e903";}
 .Icon.-shadowdrop.-hermes::after        {content: "\e903";}
+
+.Icon.-copy::before          {content: "\e904";}
 .Icon.-shadowdrop.-copy::after          {content: "\e904";}
+
+.Icon.-facebook::before      {content: "\e905";}
 .Icon.-shadowdrop.-facebook::after      {content: "\e905";}
+
+.Icon.-instagram::before     {content: "\e906";}
 .Icon.-shadowdrop.-instagram::after     {content: "\e906";}
+
+.Icon.-linkedin::before      {content: "\e907";}
 .Icon.-shadowdrop.-linkedin::after      {content: "\e907";}
 
 .Note {
@@ -202,7 +218,7 @@ body {
     padding-top: 5em;
 
     box-shadow: var(--shadow-in);
-    background: url('./background.trim.webp') no-repeat 0 0 / cover;
+    background: url('./img/bg.webp') no-repeat 0 0 / cover;
     background-attachment: fixed;
     
     position: relative;
@@ -661,7 +677,7 @@ body {
     align-items: center;
 
     box-shadow: var(--shadow-in);
-    background-image: url('./background.png');
+    background-image: url('./img/bg.webp');
     background-size: cover;
 }
 
@@ -1070,12 +1086,10 @@ ul {
 
 
 
-
-
-@media screen and (min-width: 550px) {
+@media screen and (max-width: 550px) {
     
     .Back, .Participants {
-        background-image: url('./background.webp');
+        background-image: url('./img/bg.narrow.webp');
     }
 }
 
