@@ -13,14 +13,6 @@
  * -> .Drzewo > .liść.-duży     # duży liść w drzewie
  */
 
-
-@font-face {
-    font-family: 'Chillax';
-    src: url('./font/Chillax_Complete/Fonts/TTF/Chillax-Variable.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 @font-face {
     font-family: 'JosefinSans';
     src: url('./font/JosefinSans/JosefinSans-VariableFont_wght.ttf') format('truetype');
@@ -82,7 +74,8 @@
 
 * { box-sizing: border-box; }
 
-:root a { color: inherit;}
+:root button { background: none; border: none; cursor: pointer; }
+:root button, :root a { color: inherit;}
 :root a.disabled { color: inherit; pointer-events: none;}
 
 body {
@@ -98,84 +91,66 @@ body {
     background-color: var(--color-between);
 }
 
+
+@font-face {
+    font-family: 'Icon';
+    src:  url('font/Icon/fonts/icomoon.eot?sohsy4');
+    src:  url('font/Icon/fonts/icomoon.eot?sohsy4#iefix') format('embedded-opentype'),
+      url('font/Icon/fonts/icomoon.ttf?sohsy4') format('truetype'),
+      url('font/Icon/fonts/icomoon.woff?sohsy4') format('woff'),
+      url('font/Icon/fonts/icomoon.svg?sohsy4#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
 .Icon {
-    display: inline-block;
-    width: 8em; height: 8em;
-    background-color: var(--color-bright);
-    transition: background-color 0.2s ease;
-    
-    mask-size: 100%; -webkit-mask-size: 100%;
-    mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat;
+
+    position: relative;
+
+    speak: never;
+
+    font-family: 'Icon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    display: inline-block; font-size: 8em;
+    text-decoration: none !important;
 }
 
-.Icon.-large {
-    width: 12em; height: 12em;
+.Icon.-shadowdrop::after {
+    position: absolute; z-index: -1;
+    top: 1%; left: 1%;
+    color: var(--color-between);
 }
 
-.Icon.-small {
-    width: 4em; height: 4em;
-}
+.Icon.-huge { font-size: 32em;}
+.Icon.-large { font-size: 12em;}
+.Icon.-small { font-size: 4em;}
+.Icon.-tiny { font-size: 2em;}
 
-.Icon.-tiny {
-    width: 2em; height: 2em;
-}
+.Icon.-coloseum::before      {content: "\e900";}
+.Icon.-architecture::before  {content: "\e901";}
+.Icon.-logo::before          {content: "\e902";}
+.Icon.-hermes::before        {content: "\e903";}
+.Icon.-copy::before          {content: "\e904";}
+.Icon.-facebook::before      {content: "\e905";}
+.Icon.-instagram::before     {content: "\e906";}
+.Icon.-linkedin::before      {content: "\e907";}
 
-.Icon.-coloseum {
-
-    mask-image: url('./ico/colosseum-rome-svgrepo-com.svg');
-    -webkit-mask-image: url('./ico/colosseum-rome-svgrepo-com.svg');
-}
-
-.Icon.-copy {
-    cursor: pointer;
-    mask-image: url('./ico/iconmonstr-copy-lined.svg');
-    -webkit-mask-image: url('./ico/iconmonstr-copy-lined.svg');
-}
-
-.Icon.-architecture {
-
-    mask-image: url('./ico/greek-column-svgrepo-com.svg');
-    -webkit-mask-image: url('./ico/greek-column-svgrepo-com.svg');
-}
-
-.Icon.-hermes {
-
-    mask-image: url('./ico/hermes-shoe-svgrepo-com.svg');
-    -webkit-mask-image: url('./ico/hermes-shoe-svgrepo-com.svg');
-}
-
-.Icon.-facebook {
-
-    mask-image: url('./ico/iconmonstr-facebook-6.svg');
-    -webkit-mask-image: url('./ico/iconmonstr-facebook-6.svg');
-}
-
-.Icon.-linkedin {
-
-    mask-image: url('./ico/iconmonstr-linkedin-2.svg');
-    -webkit-mask-image: url('./ico/iconmonstr-linkedin-2.svg');
-}
-
-.Icon.-instagram {
-
-    mask-image: url('./ico/iconmonstr-instagram-12.svg');
-    -webkit-mask-image: url('./ico/iconmonstr-instagram-12.svg');
-}
-
-.Icon.-logo {
-
-    display: block;
-    background-color: var(--color-bright);
-    mask-image: url('./img/Hackology.logo.svg');
-    -webkit-mask-image: url('./img/Hackology.logo.svg');
-
-    mask-size: contain; mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-}
-
-
-
+.Icon.-shadowdrop.-coloseum::after      {content: "\e900";}
+.Icon.-shadowdrop.-architecture::after  {content: "\e901";}
+.Icon.-shadowdrop.-logo::after          {content: "\e902";}
+.Icon.-shadowdrop.-hermes::after        {content: "\e903";}
+.Icon.-shadowdrop.-copy::after          {content: "\e904";}
+.Icon.-shadowdrop.-facebook::after      {content: "\e905";}
+.Icon.-shadowdrop.-instagram::after     {content: "\e906";}
+.Icon.-shadowdrop.-linkedin::after      {content: "\e907";}
 
 .Note {
     position: absolute;
@@ -288,8 +263,8 @@ body {
 
 .Header > .symbol > .shadow {
     position: absolute; z-index: 1;
-    top: .5em; left: .5em;
-    background-color: var(--color-between);
+    top: 1%; left: 1%;
+    color: var(--color-between);
 }
 
 .Header>.name,
@@ -717,14 +692,6 @@ body {
     text-align: center;
 }
 
-.Participant > .Icon {
-    background-color: var(--color-bright);
-}
-
-.Participant.bright > .Icon {
-    background-color: var(--color-between);
-}
-
 .Participant > .Note {
     text-align: center;
     margin-right: 6em;
@@ -1046,10 +1013,6 @@ ul {
 }
 
 .Sponsorship > .contact > h3::after{content:':'}
-
-.Sponsorship > .contact > .Icon {
-    width: 4em; height: 4em;
-}
 
 .Social {
     display: flex; gap: 1em;
