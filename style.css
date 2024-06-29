@@ -14,6 +14,13 @@
  */
 
 @font-face {
+    font-family: 'Consola';
+    src: url('./font/consola.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'JosefinSans';
     src: url('./font/JosefinSans/JosefinSans-VariableFont_wght.ttf') format('truetype');
     font-weight: 100 900;
@@ -54,7 +61,7 @@
     --shadow-glass: 5px 5px 10px #3f0335, -5px -5px 10px #180255;
     --shadow-glass-wide: 5px 5px 10px #3f0335, -5px -5px 10px #180255;
 
-    --font-heading: 'JosefinSans', sans-serif;
+    --font-heading: 'Consola', sans-serif;
     --font-note: 'JosefinSans', sans-serif;
     --font-text: "Kode Mono", monospace;
     --font-readable: "Barlow", sans-serif;
@@ -604,7 +611,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('./img/Lublin.logo.png');
+    background-image: url('./img/LWIT.logo.png');
 
     display: block;
     width: 24em; height: 14em;
