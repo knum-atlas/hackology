@@ -952,6 +952,7 @@ ul {
 .Ruleset {
     gap: 4.4em;
     padding-bottom: 16em;
+    font-family: var(--font-readable);
 }
 
 .Ruleset > .files {
@@ -965,8 +966,17 @@ ul {
     text-align: left;
 }
 
-.Ruleset > .chapter{
-    width: 80%; min-width: 32em;
+.Ruleset .paragraph {
+    text-align: center;
+}
+
+.Ruleset .chapter {
+    line-height: 2em;
+    text-align: center;
+}
+
+.Ruleset .wrapper {
+    max-width: 42em;
 }
 
 
