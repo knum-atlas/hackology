@@ -609,7 +609,7 @@ body {
 }
 
 .Partner:hover {
-    scale: 1.2;
+    scale: 1.1;
 }
 
 .Partner.-lbl {
@@ -618,6 +618,31 @@ body {
     background-position: center;
     background-image: url('./img/LWIT.logo.png');
 
+display: block;
+    width: 28em; height: 18em;
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.Partner.-lblskie {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/lubelskie/logo.full.png');
+    background-color: white;
+
+    display: block;
+    width: 24em; height: 14em;
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.Partner.-netrix {
+    background-size: 22em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/netrix/logo.alpha.png');
+    background-color: white;
     display: block;
     width: 24em; height: 14em;
     max-width: 100%;
