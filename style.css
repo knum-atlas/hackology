@@ -111,6 +111,8 @@ body {
     font-display: block;
   }
 
+[download]{ font-style: italic;}
+
 .Icon {
 
     position: relative;
@@ -552,11 +554,12 @@ body {
     padding: 1.75rem;
     transition: 0.4s ease;
     overflow-wrap: break-word !important;
-    margin: 0 1em;
+    margin: 0 1em 1em 1em;
     border-radius: 6px;
     z-index: 4;
     backdrop-filter: blur(3px) brightness(0.7);
     -webkit-backdrop-filter: blur(3px) brightness(0.7); 
+    height: min-content;
 
 }
 
@@ -618,7 +621,7 @@ body {
     background-position: center;
     background-image: url('./img/LWIT.logo.png');
 
-display: block;
+    display: block;
     width: 28em; height: 18em;
     max-width: 100%;
     border-radius: 0;
@@ -653,6 +656,7 @@ display: block;
 
 .Whitebar {
     background-color: white;
+    color: var(--color-dark);
     box-shadow: var(--shadow-glass);
     display: flex; flex-flow: row wrap;
     align-items: center;
@@ -660,17 +664,13 @@ display: block;
 }
 
 
-
 .Footer {
-
     padding-top: 5em;
-    gap: 5em;
-
-    text-align: center;
     display: flex;
-    flex-flow: column wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .Footer a {
@@ -680,7 +680,7 @@ display: block;
 
 .Footer>.section {
     padding: 1em;
-}
+    }
 
 
 
@@ -693,14 +693,42 @@ display: block;
 }
 
 .Sign {
+    width: 100%;
+    padding: 1em 1em;
+    margin: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-flow: column;
     gap: 1em;
 }
-.Sign > .Logo {
+
+.Sign .Logo {
     width: 10em;
 }
+
+@media screen and (max-width: 768px) {
+    .FAQ {
+        position: static;
+        width: 100%;
+        order: 3; /* Move FAQ to the end */
+        padding-top: 2em;
+    }
+
+    .center-sections {
+        order: 1; /* Ensure center sections come first */
+    }
+
+    .Sign {
+        order: 2; /* Ensure Sign comes second */
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -1141,7 +1169,7 @@ ul {
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1068px) {
 
     .leftcolumn {
         float: left;
@@ -1227,3 +1255,5 @@ ul {
         margin-bottom: 1em;
     }
 }
+
+
