@@ -451,5 +451,63 @@
         </footer>
 
 
+
+        <script>
+        //@ts-check
+        /** @param {DragEvent} e */ function grab(e, D=256) {
+        let n = /** @type {HTMLElement} */ (e.target)
+        if (!n.hasAttribute) return
+        if (!n.hasAttribute('draggable')) return
+        let M = { x: e.clientX, y: e.clientY }
+        let P = n.getBoundingClientRect()
+
+        let Tx = 0, Ty = 0
+        let T = n.style.transform
+        if (T.includes('translate')) {
+          let m = T.match(/translate\(([^)]+)\)/)
+          if (m) [Tx, Ty] = m[1].split(',').map(x => parseFloat(x))
+        }
+
+        let x = M.x - (P.left + P.right)/2 + Tx
+        let y = M.y - (P.top + P.bottom)/2 + Ty
+        let d = Math.sqrt(x*x + y*y)
+        if (d > D) x = D * x / d, y = D * y / d
+        let a = 0.1*Math.abs(x)/D*Math.atan2(x, y) * 180 / Math.PI
+
+        n.style.transform = `translate(${x}px, ${y}px) rotate(${a}deg)`
+
+        // n.style.transform = `translate(${l}px, ${t}px)`
+        }
+
+        /** @param {DragEvent} e */ function alphadrag(e) {
+        let I = new Image()
+        I.src = 'data:image/gif;base64,' +
+          'R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=='
+        e.dataTransfer?.setDragImage(I, 0, 0)
+        }
+
+        /** @param {Element} n */ function mkgrabable(n) {
+        n.addEventListener('drag', grab, false)
+        n.addEventListener('dragend', grab, false)
+        n.addEventListener('dragstart', alphadrag, false)
+        }
+
+        /** @param {Element} n */ function mkdbclickdrag(n) {
+        n.addEventListener('dblclick', () => {
+          console.log('doubleclick')
+          if (n.hasAttribute('draggable')) {
+            n.removeAttribute('draggable')
+          } else {
+            n.setAttribute('draggable', 'true')
+          }
+        }, false)
+        }
+
+        let C = [...document.querySelectorAll('.Partner')]
+        C = C.filter(n => n.clientHeight < 512)
+        C.forEach(n => mkgrabable(n))
+        C.forEach(n => mkdbclickdrag(n))
+
+        </script>
     </body>
 </html>
