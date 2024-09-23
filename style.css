@@ -652,6 +652,32 @@ body {
     border-radius: 0;
 }
 
+.Partner.-golem {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/golem.logo.png');
+    background-color: #3a3a46;
+
+    display: block;
+    width: 16em; height: 14em;
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.Partner.-czrn {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/czarnamagia.png');
+    background-color: white;
+
+    display: block;
+    width: 16em; height: 14em;
+    max-width: 100%;
+    border-radius: 0;
+}
+
 
 
 .Whitebar {
@@ -661,6 +687,7 @@ body {
     display: flex; flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+    margin: 2.4em 0;
 }
 
 
