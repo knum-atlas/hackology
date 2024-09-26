@@ -679,6 +679,19 @@ body {
 }
 
 
+.Partner.-santander {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/santasatana.webp');
+    background-color: #ec0000;
+
+    display: block;
+    width: 16em; height: 14em;
+    max-width: 100%;
+    border-radius: 0;
+}
+
 
 .Whitebar {
     background-color: white;
