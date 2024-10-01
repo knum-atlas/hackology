@@ -627,6 +627,20 @@ body {
     border-radius: 0;
 }
 
+.Partner.-asseco {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/asseco.jpg');
+
+    display: block;
+    background-color: white;
+
+    width: 32em; height: 20em;
+    max-width: 100%;
+    border-radius: 0;
+}
+
 .Partner.-lblskie {
     background-size: contain;
     background-repeat: no-repeat;
@@ -670,6 +684,32 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-image: url('./img/czarnamagia.png');
+    background-color: white;
+
+    display: block;
+    width: 16em; height: 14em;
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.Partner.-ailab {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/ailab.webp');
+    background-color: white;
+
+    display: block;
+    width: 16em; height: 14em;
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.Partner.-wspa {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/WSPA.svg');
     background-color: white;
 
     display: block;
@@ -1197,6 +1237,10 @@ ul {
 
 .Logo {
     max-width: 32em;
+}
+
+.Logo.-small {
+    max-width: 16em;
 }
 
 
