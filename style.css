@@ -593,8 +593,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 5% 0;
+    margin: 5%;
     gap: max(10%, 3em);
+    row-gap: 8em;
 }
 
 .Partner {
@@ -651,6 +652,35 @@ body {
     background-color: white;
 
     width: 18em; height: 18em;
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.Partner.-oxygen {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/oxygen.v.png');
+
+    display: block;
+
+    width: 20em; height: 18em;
+    background-size: 16em;
+    background-color: white;
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.Partner.-redhat {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/redhat.svg');
+
+    display: block;
+    background-color: white;
+
+    width: 24em; height: 15em;
+    background-size: 20em 12em;
     max-width: 100%;
     border-radius: 0;
 }
@@ -754,7 +784,7 @@ body {
     display: flex; flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    margin: 2.4em 0;
+    margin: 8em 0;
 }
 
 
