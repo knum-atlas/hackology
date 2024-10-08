@@ -641,6 +641,20 @@ body {
     border-radius: 0;
 }
 
+.Partner.-orange {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/orange.png');
+
+    display: block;
+    background-color: white;
+
+    width: 18em; height: 18em;
+    max-width: 100%;
+    border-radius: 0;
+}
+
 .Partner.-lblskie {
     background-size: contain;
     background-repeat: no-repeat;
