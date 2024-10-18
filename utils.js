@@ -48,7 +48,7 @@ function startTypeWriter() {
 
 function updateCountdown() {
 
-    const TARGETDATE = new Date('2024-10-19T09:30:00Z').getTime();
+    const TARGETDATE = new Date('2024-10-19T10:00:00Z').getTime();
 
     let els = {
         days: document.getElementById('days'),
